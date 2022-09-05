@@ -1,0 +1,52 @@
+.header {
+    color: rgba(22, 218, 142, 1);
+    display: flex; 
+    // padding: 20px;
+    justify-content: space-between;
+    overflow-x: scroll;
+    width: 100%;
+    .hulu {
+        height: 50px;
+        object-fit: contain; 
+        margin: 10px 20px;
+    }
+    .header_icons {
+        display: flex;
+        flex: 1;
+        align-self: center;
+        justify-content: space-evenly;
+        .header_icon {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            flex: 1;
+            align-items: center; 
+            &:hover p {
+                display: inline;
+            }
+            p {
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                margin: auto;
+                font-size: 12px;
+                display: none;
+            }
+        }
+    } 
+}
+
+@media screen and (max-width: 600px){
+    .header {
+        display: flex;
+        flex-direction: column-reverse;
+        .hulu {
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+        .header_icons {
+            width: 100%;
+            justify-content: space-evenly;
+        }
+    }
+}
+
