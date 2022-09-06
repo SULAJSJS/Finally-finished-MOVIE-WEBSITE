@@ -5,9 +5,9 @@ import request from './request';
 import { Dropdown, Input } from 'antd';
 const Header = ({ setSelectedOption }) => {
   const onSearch = (value) => {
-    let val = String(value).replace(' ', '+')
-    setSelectedOption(request.searchMovies + val)
-  }
+    let val = String(value).replace(' ', '+');
+    setSelectedOption(request.searchMovies + val);
+  };
   return (
     <div className="header">
       <div onClick={() => setSelectedOption(request.fetchAnimation)} className="header_icons">
@@ -28,20 +28,19 @@ const Header = ({ setSelectedOption }) => {
           <p style={{ fontSize: '11px' }}>Collections</p>
         </div>
         <div className="header_icon">
-          <Dropdown 
+          <Dropdown
             overlay={
-              <Input.Search 
-                placeholder='Search Movies, Collections, TV...'
-                enterButton='Search'
-                size='large'
+              <Input.Search
+                placeholder="Search Movies, Collections, TV..."
+                enterButton="Search"
+                size="large"
                 onSearch={onSearch}
               />
             }
             placement={'bottomLeft'}
             overlayStyle={{
-              background: 'transperent'
-            }}
-          >
+              background: 'transperent',
+            }}>
             <Search sx={{ fontSize: '30px' }} />
           </Dropdown>
         </div>
@@ -50,11 +49,7 @@ const Header = ({ setSelectedOption }) => {
           <p>Account</p>
         </div>
       </div>
-      <img
-        src="https://hulu-matchmaker.s3.us-west-2.amazonaws.com/2020-08/Hulu_Logo-01_newgreen.png"
-        alt="Hulu"
-        className="hulu"
-      />
+      <h1 className="sula">SULA</h1>
     </div>
   );
 };
