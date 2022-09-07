@@ -15,7 +15,7 @@ const PreviewModal = ({ visible, setVisible, data, url }) => {
     axios
       .get(
         request.getMovieDetails +
-          `/${data?.id}?api_key=${API_KEY}&language=en-us`
+          `/${data?.id}?api_key=${API_KEY}&language=ru-RU`
       ).then((res) => {
         setMovieD(res?.data)
       })
@@ -42,7 +42,7 @@ const PreviewModal = ({ visible, setVisible, data, url }) => {
         </div>
         <div className="modal-container-right">
           <h2 style={{ color: '#fff', margin: '10px 0px', fontWeight: 500 }}>
-            {data?.original_title || data?.title}
+            {data?.title}
           </h2>
           <span>
             <small>{movieD?.tagline}</small>

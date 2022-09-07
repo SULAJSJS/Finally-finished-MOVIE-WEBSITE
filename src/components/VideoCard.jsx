@@ -19,7 +19,7 @@ const VideoCard = ({data}) => {
     .then((res) => {
         setUrl(res)
     }).catch((err) => {
-        console.log("Temporarily Unavailable")
+        console.error(err, "Temporarily Unavailable")
     })
   }, [data?.original_title, data?.title])
 
@@ -32,7 +32,7 @@ const VideoCard = ({data}) => {
           onClick={() => setFlipped(!flipped)}
           className="videoCard">
           <div className="videocard">
-            <h2 style={{ color: '#fff' }}>{truncate(data?.original_title || data?.title, 18)}</h2>
+            <h2 style={{ color: '#fff' }}>{truncate(data?.title, 150)}</h2>
             <p>{truncate(data?.overview, 150)}</p>
             <span
               style={{
@@ -104,7 +104,7 @@ const VideoCard = ({data}) => {
               color: '#fff',
               fontWeight: 600
             }}>
-            {truncate(data?.original_title || data?.title, 18)}
+            {truncate(data?.title, 18)}
           </h3>
         </div>
       </ReactCardFlip>
